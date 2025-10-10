@@ -1,0 +1,70 @@
+CHANGES IN VERSION 0.99.13
+-------------------------
+
+Internal Changes
+
+    o Move reading / writing of project files from shiny into R packge 
+
+CHANGES IN VERSION 0.99.12
+-------------------------
+NEW FEATURES
+
+    o Added Cosine and Modified Cosine score to HCA clustering
+    o tweaked interface, README's and documentation
+    o Add support for Sirius version >6.0
+
+Internal Changes
+
+    o Refactor parseMSP, add import options.
+    o Shiny app now uses extendedTasks for long(er) running calculations, 
+      like Data Import & HCA. Avoids blocking concurrent users in Open Source Shiny Server
+
+CHANGES IN VERSION 0.99.9
+-------------------------
+Internal Changes
+
+    o Cleanup sampleClass variable name 
+    o Cleanup some global variable use. But not too much. 
+    o ShinyApp: added options to choose sirius category
+    o ShinyApp: fix HCA node click bug
+
+CHANGES IN VERSION 0.99.7
+-------------------------
+Internal Changes
+
+    o Cleanup library imports and exports
+    o Increase level of Roxygenisation
+
+CHANGES IN VERSION 0.99.6
+-------------------------
+NEW FEATURES
+
+    o Loading of SIRIUS annotation files in web app
+    o Bumping web app to 1.3.6
+
+CHANGES IN VERSION 0.99.4
+-------------------------
+NEW FEATURES
+
+    o Reading and parsing of intensity matrix now via QFeatures package
+    o First parallelisation (and speedup) in distance matrix calculation
+    o Adding of new contributor, change of maintainer
+
+
+CHANGES IN VERSION 0.99.2
+-------------------------
+
+BUG FIXES
+
+    o Now producing correct PCA on R-4.0.0+ by using a custom data.matrix() function with old R-3.6.3 behaviour
+
+CHANGES IN VERSION 0.99.2
+-------------------------
+
+NEW FEATURES
+
+    o More and better colors available for plotting (thanks @khabatv)
+    o improving package and app source organisation
+    o runMetFamily() function to launch the Shiny app
+    o Started testing infrastructure
+
