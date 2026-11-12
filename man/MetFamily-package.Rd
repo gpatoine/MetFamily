@@ -15,4 +15,20 @@ Useful links:
 }
 
 }
+\author{
+\strong{Maintainer}: Steffen Neumann \email{sneumann@ipb-halle.de} (\href{https://orcid.org/0000-0002-7899-7192}{ORCID})
+
+Authors:
+\itemize{
+  \item Hendrik Treutler \email{hendrik.treutler@ipb-halle.de}
+}
+
+Other contributors:
+\itemize{
+  \item Khabat Vahabi \email{khabat.vahabi@ipb-halle.de} [contributor]
+  \item Norman Storz \email{nstorz@ipb-halle.de} [contributor]
+  \item Guillaume Patoine \email{gpatoine@ipb-halle.de} [contributor]
+}
+
+}
 \keyword{internal}

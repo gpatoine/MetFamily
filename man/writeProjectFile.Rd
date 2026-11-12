@@ -4,7 +4,7 @@
 \alias{writeProjectFile}
 \title{Export MetFamily project}
 \usage{
-writeProjectFile(dataList, precursorSet = NULL, file)
+writeProjectFile(dataList, precursorSet = NULL, file, compressed = TRUE)
 }
 \arguments{
 \item{dataList}{main dataset}
@@ -12,6 +12,8 @@ writeProjectFile(dataList, precursorSet = NULL, file)
 \item{precursorSet}{entries to include, defaults to all}
 
 \item{file}{filename}
+
+\item{compressed}{if FALSE, skip compressing. If True, compress}
 }
 \value{
 filename
