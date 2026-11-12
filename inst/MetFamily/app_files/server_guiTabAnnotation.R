@@ -65,7 +65,8 @@ updateAnnotationOverview <- function(){
       #bInfo = 0,                # information on/off (how many records filtered, etc)
       #bAutoWidth = 0,           # automatic column width calculation, disable if passing column width via aoColumnDefs
       #aoColumnDefs = list(list(sWidth="300px", aTargets=c(list(0),list(1))))    # custom column size
-      ordering = F,              # row ordering
+      ordering = TRUE,              # row ordering
+      order = list(),   # no initial sort; keeps original row order
       sDom  = 't'
       #sDom  = '<"top">rt<"bottom">ip'
     ))

@@ -274,55 +274,51 @@ navbarPage(
                        helpText(
                          "The data set used as showcase in the MetFamily publication referenced in the tab 'About'."
                        ),
-                       br(),
-                       h4("Download original metabolite profile and MS/MS library"),
                        fluidRow(
-                         column(width = 6, style="width:50%",
-                                div(style="float:left;width:100%",
-                                    bsTooltip(id = "downloadMsData", title = "Download the original metabolite profile used in the MetFamily publication", placement = "bottom", trigger = "hover"),
-                                    downloadButton(outputId = "downloadMsData", label = "Download metabolite profile"),
-                                    tags$style(type='text/css', "#downloadMsData { width:100%}")
-                                )
-                         ),##column
-                         column(width = 6, style="width:50%",
-                                div(style="float:right;width:100%",
-                                    bsTooltip(id = "downloadMsMsData", title = "Download the original MS/MS library used in the MetFamily publication", placement = "bottom", trigger = "hover"),
-                                    downloadButton(outputId = "downloadMsMsData", label = "Download MS/MS library"),
-                                    tags$style(type='text/css', "#downloadMsMsData { width:100%}")
-                                )
+                         column(
+                           width = 6, offset = 2,
+                           bsTooltip(id = "loadExampleData", title = "Press to load the example data set", placement = "bottom", trigger = "hover"),
+                           actionButton(inputId = "loadExampleData", label = "Load example data", class="btn-success", width = "100%")
                          )##column
+                        ),##row
+                        br(),
+                        h4("Download the original data"),
+                        fluidRow(
+                          column(
+                            width = 6, style="width:40%",
+                            div(
+                              style="float:left;width:100%",
+                              bsTooltip(id = "downloadMsData", title = "Download the original metabolite profile used in the MetFamily publication", placement = "bottom", trigger = "hover"),
+                              downloadButton(outputId = "downloadMsData", label = "Metabolite profile (TXT)"),
+                              tags$style(type='text/css', "#downloadMsData { width:100%}")
+                            )
+                          ),##column
+                          column(
+                            width = 6, style="width:40%",
+                          div(
+                            style="float:right;width:100%",
+                            bsTooltip(id = "downloadMsMsData", title = "Download the original MS/MS library used in the MetFamily publication", placement = "bottom", trigger = "hover"),
+                            downloadButton(outputId = "downloadMsMsData", label = "MS/MS library (MSP)"),
+                            tags$style(type='text/css', "#downloadMsMsData { width:100%}")
+                          )
+                        )##column
                        ),##row
                        br(),
-                       h4("Download generated fragment matrix"),
+                       h4("Download additional files"),
                        fluidRow(
-                         column(width = 6, style="width:50%",
-                                bsTooltip(id = "downloadFragmentMatrix", title = "Download the fragment matrix generated from the original metabolite profile and MS/MS library used in the MetFamily publication", placement = "bottom", trigger = "hover"),
-                                downloadButton('downloadFragmentMatrix', 'Download fragment matrix'),
-                                tags$style(type='text/css', "#downloadFragmentMatrix { width:100%}")
-                         ),
-                         column(width = 6, style="width:50%"
-                                
-                         )
-                       ),
-                       br(),
-                       fluidRow(
-                         column(width = 12,
-                                h4("Download showcase protocol"),
-                                bsTooltip(id = "downloadDocShowcaseProtocol", title = "Download the protocol which is the basis of the results of the showcase in the MetFamily publication", placement = "bottom", trigger = "hover"),
-                                downloadButton('downloadDocShowcaseProtocol', 'Download showcase protocol')
-                         )
-                       ),
-                       br(),
-                       h4("Load example data"),
-                       fluidRow(
-                         column(width = 6,
-                                bsTooltip(id = "loadExampleData", title = "Press to load the example data set", placement = "bottom", trigger = "hover"),
-                                actionButton(inputId = "loadExampleData", label = "Load example data", class="btn-success", width = "100%")
-                         ),##column
-                         column(width = 6
-                                
-                         )##column
-                       )##row
+                        column(
+                          width = 6, style="width:40%",
+                          bsTooltip(id = "downloadDocShowcaseProtocol", title = "Download the protocol which is the basis of the results of the showcase in the MetFamily publication", placement = "bottom", trigger = "hover"),
+                          downloadButton('downloadDocShowcaseProtocol', 'Showcase protocol (PDF)'),
+                          tags$style(type='text/css', "#downloadDocShowcaseProtocol { width:100%}")
+                        ),
+                        column(
+                          width = 6, style="width:40%",
+                          bsTooltip(id = "downloadFragmentMatrix", title = "Download the fragment matrix generated from the original metabolite profile and MS/MS library used in the MetFamily publication", placement = "bottom", trigger = "hover"),
+                          downloadButton('downloadFragmentMatrix', 'Fragment matrix (CSV)'),
+                          tags$style(type='text/css', "#downloadFragmentMatrix { width:100%}")
+                        )
+                      )
                      ),## conditional
                      conditionalPanel(
                        condition = 'input.fileInputSelection == "Galaxy History"',
